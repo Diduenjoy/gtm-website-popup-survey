@@ -83,6 +83,7 @@ const injectScript = require('injectScript');
 const callInWindow = require('callInWindow');
 const copyFromWindow = require('copyFromWindow');
 const setInWindow = require('setInWindow');
+const encodeUri = require('encodeUri');
 const getUrl = require('getUrl');
 if (
     queryPermission('access_globals', 'readwrite', '_diduenjoy') &&
@@ -105,7 +106,7 @@ if (
   setInWindow('_diduenjoy', _diduenjoy, true);
   
   const protocol = getUrl('protocol');
-  injectScript(('https' == protocol ? 'https' : 'http') + '://cdn.diduenjoy.' + _diduenjoy.domain + '/libs/due-popup.min.js');
+  injectScript(('https' == protocol ? 'https' : 'http') + '://cdn.diduenjoy.' + encodeUri(_diduenjoy.domain) + '/libs/due-popup.min.js');
   
   // Call data.gtmOnSuccess when the tag is finished.
   data.gtmOnSuccess();
