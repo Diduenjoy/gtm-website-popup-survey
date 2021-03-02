@@ -1,5 +1,9 @@
 homepage: "https://www.diduenjoy.com"
 documentation: "https://github.com/Diduenjoy/gtm-website-popup-survey"
 versions:
+  # Latest version
+  - sha: 42cc8ef415596414c1f7d1d412dd7ea3d38a40da
+    changeNotes: encodeUri _diduenjoy.domain
+  # Older versions
   - sha: ab6f88132f8008f87d8c09f80b8784c5a7f5cbd9
     changeNotes: Initial release.
